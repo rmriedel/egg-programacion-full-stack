@@ -9,11 +9,27 @@
 //Tener en cuenta que al usuario se le solicita que ingrese el día de la semana (lunes,
 //martes, etc.), pero para calcular el jornal diario debemos saber si el día ingresado es
 //festivo o no. Utilice una función para realizar el cálculo.
-Funcion salario <- salarioFunc(t, f)
+Funcion salario <- salarioFunc(t, f, h)
 	
 	Definir salario Como Entero
 	
-	//Si t
+	Segun t Hacer
+		
+		"diurno":
+			Si (f = Verdadero) Entonces
+				salario = h * (90 + (90*0.1))
+			SiNo
+				salario = h * 90
+			FinSi
+			
+		"nocturno":
+			Si (f = Verdadero) Entonces
+				salario = h * trunc((125 + (125*0.15)))
+			SiNo
+				salario = h * 125
+			FinSi
+			
+	Fin Segun
 	
 FinFuncion
 
@@ -22,6 +38,7 @@ Algoritmo g3_ej8
 	
 	Definir turno, nombreTrabajador, diaSemana, f como Cadena
 	Definir feriado Como Logico
+	Definir horasTrabajadas, salarioFinal Como Entero
 	
 	feriado = Falso
 	
@@ -43,11 +60,13 @@ Algoritmo g3_ej8
 	Escribir "Ingresar turno"
 	Leer turno
 	
+	Escribir "Ingrese cantidad de horas trabajadas: "
+	Leer horasTrabajadas
 	
+	turno = Minusculas(turno)
 	
+	salarioFinal = salarioFunc(turno, feriado, horasTrabajadas)
 	
-	
-	
-	
+	Escribir "El salario del trabajador: ",nombreTrabajador," con turno: ", turno," debe ser de: ", salarioFinal	
 	
 FinAlgoritmo
