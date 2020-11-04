@@ -1,3 +1,5 @@
+//Realizar un programa que rellene un vector con 5 valores ingresados por el usuario y los
+//muestre por pantalla.
 Algoritmo g4_ej1
 	Definir vector, n, i Como Entero
 	Dimension vector(10)
