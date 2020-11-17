@@ -17,7 +17,21 @@ SubAlgoritmo llenarVector(vectorValores Por Referencia, n)
 
 FinSubAlgoritmo
 
-SubAlgoritmo buscarElemento(vectorValores Por Referencia, n, val Por Referencia)
+SubAlgoritmo buscarElemento(vectorValores Por Referencia, n Por Referencia, val Por Referencia)
+	Definir i Como Entero
+	
+	Escribir "ingresar valor a buscar: "
+	Leer val
+	
+	Para i = 0 Hasta n-1 Con Paso 1 Hacer
+		
+		Si val = vectorValores[i] Entonces
+			Escribir "el dato ingresado: [",val, "] se encuentra en la posicion: [",i+1,"]"
+		SiNo
+			Escribir "no se encontro ningun dato en esa posicion"
+		FinSi
+		
+	FinPara
 	
 FinSubAlgoritmo
 
